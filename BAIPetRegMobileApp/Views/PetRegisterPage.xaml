@@ -3,6 +3,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BAIPetRegMobileApp.Views.PetRegisterPage"
+             xmlns:local="clr-namespace:AlphaValidationBehavior"
              Title="PetRegisterPage">
 
     <ScrollView>
@@ -13,14 +14,14 @@
                     FontSize="30"
                     FontAttributes="Bold"
                     Margin="0,30,0,0"
-                    FontFamily="Poppins-Bold" />
+                    FontFamily="Poppins-Bold"/>
             <Label  Text="Animal Information"
                     HorizontalOptions="Start"
                     TextColor="#096B00"
                     FontSize="20"
                     FontAttributes="Bold"
                     Margin="40,50,0,0"
-                    FontFamily="Poppins-Bold" />
+                    FontFamily="Poppins-Bold"/>
 
             <!--Pet's Name Entry-->
 
@@ -48,11 +49,11 @@
                            HorizontalOptions="FillAndExpand"
                            FontSize="20">
                         <Entry.Behaviors>
+                            <local:AlphabeticValidationBehavior/>
                             <toolkit:TextValidationBehavior
                                 x:Name="petNameValidator"
                                 Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                MinimumLength="1"
-                                />
+                                MinimumLength="1"/>
                         </Entry.Behaviors>
 
                     </Entry>
@@ -67,7 +68,7 @@
                        Margin="40,20,0,0"
                        TextColor="Black"
                        FontSize="20"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -78,7 +79,6 @@
                     <Picker Title="Type of Ownership"
                             x:Name="ownershipList"
                             Style="{StaticResource NoUnderlinePicker}"
-                            SelectedIndexChanged="OnOwnershipListSelectedIndexChanged"
                             TitleColor="Black"
                             FontSize="20">
                         <!--Remove a picker and added to backend-->
@@ -93,7 +93,7 @@
                        FontAttributes="Bold"
                        Margin="40,20,0,0"
                        TextColor="Black"
-                       FontSize="20" />
+                       FontSize="20"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -118,7 +118,7 @@
                        FontAttributes="Bold"
                        Margin="40,20,0,0"
                        TextColor="Black"
-                       FontSize="20" />
+                       FontSize="20"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -141,7 +141,7 @@
                        FontAttributes="Bold"
                        Margin="40,20,0,0"
                        TextColor="Black"
-                       FontSize="20" />
+                       FontSize="20"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -150,8 +150,9 @@
                        Margin="30,10"
                        HorizontalOptions="FillAndExpand">
                     <DatePicker Date="{Binding BirthDate}"
+                                x:Name="datePicker"
                                 Format="D"
-                                FontSize="20" />
+                                FontSize="20"/>
                 </Frame>
             </StackLayout>
 
@@ -163,7 +164,7 @@
                        FontAttributes="Bold"
                        Margin="40,20,0,0"
                        TextColor="Black"
-                       FontSize="20" />
+                       FontSize="20"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -198,7 +199,7 @@
                        Margin="30,10"
                        HorizontalOptions="FillAndExpand">
                     <Entry Placeholder="Age"
-                           x:Name="PetAge"
+                           x:Name="EntryPetAge"
                            PlaceholderColor="Black"
                            BackgroundColor="Transparent"
                            IsTextPredictionEnabled="False"
@@ -208,7 +209,7 @@
                            HorizontalOptions="FillAndExpand"
                            FontSize="20"
                            Keyboard="Numeric"
-                           MaxLength="2" />
+                           MaxLength="2"/>
                 </Frame>
 
             </StackLayout>
@@ -241,7 +242,7 @@
                            HorizontalOptions="FillAndExpand"
                            FontSize="20"
                            Keyboard="Numeric"
-                           MaxLength="5" />
+                           MaxLength="5"/>
                 </Frame>
             </StackLayout>
 
@@ -261,6 +262,7 @@
                        Margin="30,10"
                        HorizontalOptions="FillAndExpand">
                     <Entry Placeholder="Input Animal Color"
+                           x:Name="EntryAnimalColor"
                            PlaceholderColor="Black"
                            BackgroundColor="Transparent"
                            IsTextPredictionEnabled="False"
@@ -269,7 +271,7 @@
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand"
                            FontSize="20"
-                           Keyboard="Text" />
+                           Keyboard="Text"/>
                 </Frame>
             </StackLayout>
 
@@ -299,7 +301,7 @@
                            VerticalOptions="Center"
                            HorizontalOptions="FillAndExpand"
                            FontSize="20"
-                           Keyboard="Numeric" />
+                           Keyboard="Numeric"/>
                 </Frame>
             </StackLayout>
 
@@ -309,7 +311,7 @@
                     FontSize="20"
                     FontAttributes="Bold"
                     Margin="40,50,0,0"
-                    FontFamily="Poppins-Bold" />
+                    FontFamily="Poppins-Bold"/>
 
 
             <!--Type Region Picker-->
@@ -319,7 +321,7 @@
                        Margin="40,20,0,0"
                        TextColor="Black"
                        FontSize="20"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -343,7 +345,7 @@
                        Margin="40,20,0,0"
                        TextColor="Black"
                        FontSize="20"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -367,7 +369,7 @@
                        Margin="40,20,0,0"
                        TextColor="Black"
                        FontSize="20"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -412,7 +414,7 @@
                         <Entry.Behaviors>
                             <toolkit:TextValidationBehavior x:Name="longitudeValidator"
                                                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                                            MinimumLength="1" />
+                                                            MinimumLength="1"/>
                         </Entry.Behaviors>
 
                     </Entry>
@@ -453,7 +455,7 @@
                         <Entry.Behaviors>
                             <toolkit:TextValidationBehavior x:Name="latitudeValidator"
                                                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                                            MinimumLength="1" />
+                                                            MinimumLength="1"/>
                         </Entry.Behaviors>
 
                     </Entry>
@@ -467,7 +469,7 @@
                     FontSize="20"
                     FontAttributes="Bold"
                     Margin="40,50,0,0"
-                    FontFamily="Poppins-Bold" />
+                    FontFamily="Poppins-Bold"/>
 
 
 
@@ -499,7 +501,7 @@
                         <Entry.Behaviors>
                             <toolkit:TextValidationBehavior x:Name="ownerFullNameValidator"
                                                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                                            MinimumLength="1" />
+                                                            MinimumLength="1"/>
                         </Entry.Behaviors>
 
                     </Entry>
@@ -514,7 +516,7 @@
                        FontAttributes="Bold"
                        Margin="40,20,0,0"
                        TextColor="Black"
-                       FontSize="20" />
+                       FontSize="20"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -548,7 +550,8 @@
                        HasShadow="False"
                        Margin="30,10"
                        HorizontalOptions="FillAndExpand">
-                    <Entry Placeholder="+639xxxxxxxxx"
+                    <Entry Placeholder="+63"
+                           x:Name="EntryOwnerNumber"
                            PlaceholderColor="Black"
                            BackgroundColor="Transparent"
                            IsTextPredictionEnabled="False"
@@ -558,7 +561,7 @@
                            HorizontalOptions="FillAndExpand"
                            FontSize="20"
                            Keyboard="Numeric"
-                           MaxLength="11" />
+                           MaxLength="11"/>
                 </Frame>
             </StackLayout>
 
@@ -577,7 +580,7 @@
                        HasShadow="False"
                        Margin="30,10"
                        HorizontalOptions="FillAndExpand">
-                    <Entry x:Name="EntryEmailAdd"
+                    <Entry x:Name="EntryOwnerEmail"
                            Placeholder="@gmail.com"
                            PlaceholderColor="Black"
                            BackgroundColor="Transparent"
@@ -590,7 +593,7 @@
                         <Entry.Behaviors>
                             <toolkit:TextValidationBehavior x:Name="emailAddValidator"
                                                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                                            MinimumLength="1" />
+                                                            MinimumLength="1"/>
                         </Entry.Behaviors>
 
                     </Entry>
@@ -605,7 +608,7 @@
                        Margin="40,20,0,0"
                        TextColor="Black"
                        FontSize="20"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"/>
                 <Frame CornerRadius="15"
                        Padding="10"
                        BackgroundColor="#f1f1f1"
@@ -626,8 +629,8 @@
                             AutoSize="TextChanges">
                         <!--<Editor.Behaviors>
                             <toolkit:TextValidationBehavior x:Name="emailAddValidator"
-                                                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                                            MinimumLength="1" />
+                            Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            MinimumLength="1" />
                         </Editor.Behaviors>-->
                     </Editor>
                 </Frame>
@@ -652,9 +655,9 @@
         <Style x:Key="NoUnderlinePicker"
                TargetType="Picker">
             <Setter Property="BackgroundColor"
-                    Value="Transparent" />
+                    Value="Transparent"/>
             <Setter Property="FontSize"
-                    Value="20" />
+                    Value="20"/>
         </Style>
     </ContentPage.Resources>
 </ContentPage>
